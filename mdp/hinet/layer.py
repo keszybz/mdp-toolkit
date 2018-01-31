@@ -4,7 +4,7 @@ Module for Layers.
 Note that additional args and kwargs for train or execute are currently not
 supported.
 """
-
+from __future__ import division
 import mdp
 from mdp import numx
 

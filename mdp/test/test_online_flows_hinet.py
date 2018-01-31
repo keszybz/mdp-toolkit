@@ -280,9 +280,9 @@ def test_circular_flow():
                         BogusNode(input_dim=4, output_dim=4),
                         BogusOnlineDiffDimNode(input_dim=4, output_dim=2)])
 
-    for inp_node_idx in xrange(len(flow)):
+    for inp_node_idx in range(len(flow)):
         flow.set_input_node(inp_node_idx)
-        for out_node_idx in xrange(len(flow)):
+        for out_node_idx in range(len(flow)):
             flow.set_output_node(out_node_idx)
             inp = numx.ones((1, flow[0].input_dim))
             flow.train(inp)
@@ -302,4 +302,3 @@ def test_circular_flow():
     out = flow(inp)
     assert_array_equal(out, inp*140)
     assert (flow[1].get_current_train_iteration() == flow._flow_iterations)
-
