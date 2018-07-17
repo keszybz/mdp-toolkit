@@ -472,7 +472,8 @@ def test_hinet_simple_net():
     x = numx_rand.random([5, switchboard.input_dim])
     flow.train(x)
 
-def pytest_funcarg__noisenode(request):
+@py.test.fixture
+def noisenode(request):
     return mdp.nodes.NoiseNode(input_dim=20*20,
                                noise_args=(0, 0.0001))
 
